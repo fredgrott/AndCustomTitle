@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" android:layout_height="fill_parent"
+    android:background="#040e17">
+
+    <ImageView android:id="@+id/footer" android:src="@drawable/strokes_blue_developers"
+        android:layout_height="wrap_content" android:layout_width="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+    <LinearLayout android:id="@+id/content"
+        android:layout_height="fill_parent" android:layout_width="fill_parent"
+        android:layout_below="@+id/header" android:layout_above="@+id/footer"
+        android:orientation="vertical">
+
+        <View android:layout_width="fill_parent" android:layout_height="100px" />
+
+        <View android:background="@drawable/gradient"
+            android:layout_width="fill_parent" android:layout_height="3px" android:layout_margin="3px"/>
+
+        <View android:background="@drawable/gradient"
+            android:layout_width="fill_parent" android:layout_height="3px" android:layout_margin="3px"/>
+
+        <View android:background="@drawable/gradient"
+            android:layout_width="fill_parent" android:layout_height="3px" android:layout_margin="3px"/>
+
+        <TableLayout android:layout_height="wrap_content"
+            android:layout_width="wrap_content">
+
+            <TableRow>
+                <ImageView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:src="@drawable/lil_market"
+                    android:padding="6px" android:layout_gravity="center_vertical|center_horizontal" />
+
+                <ImageView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:src="@drawable/lil_developers"
+                    android:padding="6px" android:layout_gravity="center_vertical|center_horizontal" />
+
+                <ImageView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:src="@drawable/lil_opensource"
+                    android:padding="6px" android:layout_gravity="center_vertical|center_horizontal" />
+            </TableRow>
+
+            <TableRow>
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="Market"
+                    android:textColor="#669999" android:textSize="20px"
+                    android:layout_gravity="center_vertical" android:padding="6px" />
+
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="Developers"
+                    android:textColor="#669999" android:textSize="20px"
+                    android:layout_gravity="center_vertical" android:padding="6px" />
+
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="Open Source"
+                    android:textColor="#669999" android:textSize="20px"
+                    android:layout_gravity="center_vertical" android:padding="6px" />
+            </TableRow>
+
+        </TableLayout>
+
+        <View android:background="@drawable/gradient"
+            android:layout_width="fill_parent" android:layout_height="3px" android:layout_margin="3px"/>
+
+        <View android:background="@drawable/gradient"
+            android:layout_width="fill_parent" android:layout_height="3px" android:layout_margin="3px"/>
+
+        <View android:background="@drawable/gradient"
+            android:layout_width="fill_parent" android:layout_height="3px" android:layout_margin="3px"/>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<style name="MyTheme" parent="android:Theme">
+		<item name="android:windowTitleSize">54px</item>
+		<item name="android:windowTitleBackgroundStyle">@style/WindowTitleBackground</item>  		
+		<item name="android:windowContentOverlay">@drawable/title_bar_shadow2</item>
+	</style>
+</resources>
