@@ -41,7 +41,16 @@ see it at work in your android device.
 [AndCustomTitle APK via QR](http://github.com/downloads/shareme/AndCustomTitle/AndCustomTitle.apk/qr_code)
 [AndCustomTitle APK via http](http://github.com/shareme/andcustomtitle/raw/master/screenshots/AndCustomTitle.apk)
 
+# Notes
+
+Slides on the techniques used are at:
+
+[Android UI Patterns-Custom Title](http://github.com/shareme/andcustomtitle/raw/master/slides/presentation.html)
+
+
 # Credits
+
+
 
 # Feedback
 

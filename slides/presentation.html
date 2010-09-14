@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<!--
+  Copyright 2010 Google Inc.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+
+  Original slides: Marcin Wichary (mwichary@google.com)
+  Modifications: Ernest Delgado (ernestd@google.com)
+                 Alex Russell (slightlyoff@chromium.org)
+
+  html5-slides-markdown Modifications: Adam Zapletal (adamzap@gmail.com)
+-->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Android UI Patterns-Custom Title</title>
+    <style type="text/css" media="print">
+      * {
+          margin: 0;
+          padding: 0;
+      }
+      @page {
+          size: landscape;
+      }
+      body {
+          font: 100% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+          padding: 0;
+          margin: 0;
+      }
+      div.slide {
+          min-width: 800px;
+          min-height: 600px;
+          padding: 1em;
+          overflow: hidden;
+          page-break-after: always;
+          border: 1px solid black;
+          border-radius: 20px;
+      }
+      div.slide div.inner {
+          width: 800px;
+          height: 600px;
+          margin: auto;
+          display: table-cell;
+      }
+      h1 {
+          font-size: 2.4em;
+      }
+      h2 {
+          font-size: 1.4em;
+      }
+      h3 {
+          margin: 1em 0;
+      }
+      ul {
+          margin: 0;
+          padding: 0;
+      }
+      p, li, pre {
+          margin: 1em 0;
+      }
+      li {
+          margin-left: 2em;
+      }
+      a {
+          color: #000000;
+      }
+      pre, code {
+          max-width: 800px;
+          background: #eee;
+          font-family: Monaco, monospace;
+          font-size: 90%;
+      }
+      pre {
+          padding: .5em;
+          overflow: hidden;
+          border-radius: .8em;
+      }
+      code {
+          padding: 0 .2em;
+      }
+      .slide header:only-child h1 {
+        line-height: 180%;
+        text-align: center;
+        display: table-cell;
+        vertical-align: middle;
+        height: 600px;
+        width: 800px;
+        font-size: 48px;
+        margin-top:100px;
+        margin-bottom:100px;
+      }
+    </style>
+    <style type="text/css" media="screen, projection">
+        body {
+          font: 14px "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+          background: #778;
+          padding: 0;
+          margin: 0;
+          overflow: hidden;
+        }
+
+        div.presentation {
+          position: absolute;
+          width: 100%;
+          display: table-cell;
+          vertical-align: middle;
+          height: 100%;
+          background: inherit;
+        }
+
+        div.slides {
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          left: 0;
+          top: 0;
+          position: absolute;
+          display: block;
+          -webkit-transition: -webkit-transform 1s ease-in-out;
+          -moz-transition: -moz-transform 1s ease-in-out;
+          -o-transition: -o-transform 1s ease-in-out;
+        }
+
+        div.slide {
+          display: none;
+          position: absolute;
+          overflow: hidden;
+          width: 900px;
+          height: 700px;
+          left: 50%;
+          top: 50%;
+          margin-top: -350px;
+          background: -webkit-gradient(linear, left bottom, left top, from(#bbd), to(#fff));
+          -webkit-transition: margin 0.25s ease-in-out;
+          background-color: #eee;
+          background: -moz-linear-gradient(bottom, #bbd, #fff);
+          -moz-transition: margin 0.25s ease-in-out;
+          -o-transition: margin 0.25s ease-in-out;
+          border-top-left-radius: 20px;
+          -moz-border-radius-topleft: 20px;
+          -webkit-border-top-left-radius: 20px;
+          border-top-right-radius: 20px;
+          -moz-border-radius-topright: 20px;
+          -webkit-border-top-right-radius: 20px;
+          border-bottom-right-radius: 20px;
+          -moz-border-radius-bottomright: 20px;
+          -webkit-border-bottom-right-radius: 20px;
+          border-bottom-left-radius: 20px;
+          -moz-border-radius-bottomleft: 20px;
+          -webkit-border-bottom-left-radius: 20px;
+        }
+
+        div.slide p {
+          font-size: 20px;
+        }
+
+        .slide.far-past {
+          display: block;
+          margin-left: -2400px;
+        }
+
+        .slide.past {
+          display: block;
+          margin-left: -1400px;
+        }
+
+        .slide.current {
+          display: block;
+          margin-left: -450px;
+        }
+
+        .slide.future {
+          display: block;
+          margin-left: 500px;
+        }
+
+        .slide.far-future {
+          display: block;
+          margin-left: 1500px;
+        }
+
+        body.three-d div.slides {
+          -webkit-transform: translateX(50px) scale(0.8) rotateY(10deg);
+          -moz-transform: translateX(50px) scale(0.8) rotateY(10deg);
+          -o-transform: translateX(50px) scale(0.8) rotateY(10deg);
+        }
+
+
+        /* Content */
+
+        header:not(:only-child) {
+          font-family: 'Lucida Grande';
+          font-weight: normal;
+          font-size: 50px;
+          letter-spacing: -.05em;
+          color: white;
+          color: black;
+          text-shadow: rgba(0, 0, 0, 0.2) 0 2px 5px;
+          position: absolute;
+          left: 30px;
+          top: 25px;
+          margin: 0;
+          padding: 0;
+        }
+
+        h1 {
+          display: inline;
+          font-size: 100%;
+          font-weight: normal;
+          padding: 0;
+          margin: 0;
+        }
+
+        h2 {
+          font-family: 'Lucida Grande';
+          color: black;
+          font-size: 2em;
+          margin-left: 20px;
+          margin-top: 50px;
+        }
+
+        h2:first-child {
+          margin-top: 0;
+        }
+
+        section, .slide header:only-child h1 {
+          font-family: 'Lucida Grande';
+          color: #3f3f3f;
+          text-shadow: rgba(0, 0, 0, 0.2) 0 2px 5px;
+          margin-left: 30px;
+          margin-right: 30px;
+          margin-top: 100px;
+          display: block;
+          overflow: hidden;
+        }
+
+        a {
+          color: inherit;
+          display: inline-block;
+          text-decoration: none;
+          line-height: 110%;
+          border-bottom: 2px solid #3f3f3f;
+        }
+
+        h2 {
+          padding: 0;
+          margin: 15px 0 5px 0;
+        }
+
+        pre {
+          font-size: 16px;
+          font-family: Monaco, Courier, monospace;
+        }
+
+        li {
+          padding: 10px 0;
+          font-size: 20px;
+        }
+
+        .slide header:only-child h1 {
+          line-height: 180%;
+          text-align: center;
+          display: table-cell;
+          vertical-align: middle;
+          height: 700px;
+          width: 900px;
+          font-size: 50px;
+          margin-top:100px;
+          margin-bottom:100px;
+        }
+    </style>
+    <script>
+        function main() {
+          // Since we don't have the fallback of attachEvent and
+          // other IE only stuff we won't try to run JS for IE.
+          // It will run though when using Google Chrome Frame
+          if (document.all) { return; }
+
+          var currentSlideNo;
+          var notesOn = false;
+          var slides = document.getElementsByClassName('slide');
+          var touchStartX = 0;
+
+          // var slide_hash = window.location.hash.replace(/#/, '');
+          // if (slide_hash) {
+          //   for (var i = 0, len = slides.length; i < len; i++) {
+          //     if (slides[i].id == slide_hash) {
+          //       currentSlideNo = i;
+          //       updateSlideClasses();
+          //     }
+          //   }
+          // }
+
+          var spaces = /\s+/, a1 = [""];
+
+          var str2array = function(s) {
+            if (typeof s == "string" || s instanceof String) {
+              if (s.indexOf(" ") < 0) {
+                a1[0] = s;
+                return a1;
+              } else {
+                return s.split(spaces);
+              }
+            }
+            return s;
+          };
+
+          var trim = function(str) {
+            return str.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+          };
+
+          var addClass = function(node, classStr) {
+            classStr = str2array(classStr);
+            var cls = " " + node.className + " ";
+            for (var i = 0, len = classStr.length, c; i < len; ++i) {
+              c = classStr[i];
+              if (c && cls.indexOf(" " + c + " ") < 0) {
+                cls += c + " ";
+              }
+            }
+            node.className = trim(cls);
+          };
+
+          var removeClass = function(node, classStr) {
+            var cls;
+            if (classStr !== undefined) {
+              classStr = str2array(classStr);
+              cls = " " + node.className + " ";
+              for (var i = 0, len = classStr.length; i < len; ++i) {
+                cls = cls.replace(" " + classStr[i] + " ", " ");
+              }
+              cls = trim(cls);
+            } else {
+              cls = "";
+            }
+            if (node.className != cls) {
+              node.className = cls;
+            }
+          };
+
+          var getSlideEl = function(slideNo) {
+            if (slideNo > 0) {
+              return slides[slideNo - 1];
+            } else {
+              return null;
+            }
+          };
+
+          var getSlideTitle = function(slideNo) {
+            var el = getSlideEl(slideNo);
+
+            if (el) {
+              return el.getElementsByTagName('header')[0].innerHTML;
+            } else {
+              return null;
+            }
+          };
+
+          var changeSlideElClass = function(slideNo, className) {
+            var el = getSlideEl(slideNo);
+
+            if (el) {
+              removeClass(el, 'far-past past current future far-future');
+              addClass(el, className);
+            }
+          };
+
+          var updateSlideClasses = function() {
+            window.location.hash = "slide" + currentSlideNo;
+            changeSlideElClass(currentSlideNo - 2, 'far-past');
+            changeSlideElClass(currentSlideNo - 1, 'past');
+            changeSlideElClass(currentSlideNo, 'current');
+            changeSlideElClass(currentSlideNo + 1, 'future');
+            changeSlideElClass(currentSlideNo + 2, 'far-future');
+          };
+
+          var nextSlide = function() {
+            if (currentSlideNo < slides.length) {
+              currentSlideNo++;
+            }
+
+            updateSlideClasses();
+          };
+
+          var prevSlide = function() {
+            if (currentSlideNo > 1) {
+              currentSlideNo--;
+            }
+            updateSlideClasses();
+          };
+
+          var showNotes = function() {
+            var notes = document.querySelectorAll('.notes');
+            for (var i = 0, len = notes.length; i < len; i++) {
+              notes[i].style.display = (notesOn) ? 'none':'block';
+            }
+            notesOn = (notesOn) ? false:true;
+          };
+
+          var switch3D = function() {
+            if (document.body.className.indexOf('three-d') == -1) {
+              document.getElementsByClassName('presentation')[0].style.webkitPerspective = '1000px';
+              document.body.className += ' three-d';
+            } else {
+              window.setTimeout("document.getElementsByClassName('presentation')[0].style.webkitPerspective = '0';", 2000);
+              document.body.className = document.body.className.replace(/three-d/, '');
+            }
+          };
+
+          var handleBodyKeyDown = function(event) {
+            // console.log(event.keyCode);
+            switch (event.keyCode) {
+              case 37: // left arrow
+                prevSlide();
+                break;
+              case 39: // right arrow
+              // case 32: // space
+                nextSlide();
+                break;
+              case 50: // 2
+                showNotes();
+                break;
+              case 51: // 3
+                switch3D();
+                break;
+            }
+          };
+
+          var addTouchListeners = function() {
+            document.addEventListener('touchstart', function(e) {
+              touchStartX = e.touches[0].pageX;
+            }, false);
+            document.addEventListener('touchend', function(e) {
+              var pixelsMoved = touchStartX - e.changedTouches[0].pageX;
+              var SWIPE_SIZE = 150;
+              if (pixelsMoved > SWIPE_SIZE) {
+                nextSlide();
+              }
+              else if (pixelsMoved < -SWIPE_SIZE) {
+               prevSlide();
+              }
+            }, false);
+          };
+
+          // initialize
+
+          (function() {
+            if (window.location.hash != "") {
+              currentSlideNo = Number(window.location.hash.replace('#slide', ''));
+            } else {
+              currentSlideNo = 1;
+            }
+
+            document.addEventListener('keydown', handleBodyKeyDown, false);
+
+            var els = slides;
+            for (var i = 0, el; el = els[i]; i++) {
+              addClass(el, 'slide far-future');
+            }
+            updateSlideClasses();
+
+            // add support for finger events (filter it by property detection?)
+            addTouchListeners();
+          })();
+        };
+    </script>
+</head>
+<body>
+    <div class="presentation">
+      <div class="slides">
+        
+          <div class="slide">
+              <div class="inner">
+                  
+                  <header><h1>Android UI Patterns-Custom Title</h1></header>
+                  
+                  
+              </div>
+          </div>
+        
+          <div class="slide">
+              <div class="inner">
+                  
+                  <header><h1>Android UI Patterns-Custom Title</h1></header>
+                  
+                  
+                      <section><p>Certain Android Quirks require that one modify code to get a good designed
+UI for an Android Application.  This set of slides concentrates on the
+reasons for customizing the title bar and the techniques.</p></section>
+                  
+              </div>
+          </div>
+        
+          <div class="slide">
+              <div class="inner">
+                  
+                  <header><h1>Slide #2</h1></header>
+                  
+                  
+                      <section><p><img alt="Android Hello World" src="android_hello_world_5.png" /></p></section>
+                  
+              </div>
+          </div>
+        
+          <div class="slide">
+              <div class="inner">
+                  
+                  <header><h1>Slide #3</h1></header>
+                  
+                  
+                      <section><ul>
+<li>
+<p>Android UI Widgets use the default OS styles and colors.</p>
+</li>
+<li>
+<p>If you want to customize you have to understand some Window components
+and some of the Android Application life-cycle.</p>
+</li>
+</ul></section>
+                  
+              </div>
+          </div>
+        
+          <div class="slide">
+              <div class="inner">
+                  
+                  <header><h1>Slide #4</h1></header>
+                  
+                  
+                      <section><p>Two Tasks to Accomplish</p>
+<ul>
+<li>
+<p>Title bar a different color and customizations</p>
+</li>
+<li>
+<p>Get rid of title bar flash</p>
+</li>
+</ul></section>
+                  
+              </div>
+          </div>
+        
+          <div class="slide">
+              <div class="inner">
+                  
+                  <header><h1>Slide #5</h1></header>
+                  
+                  
+                      <section><p>Mobile Java and java Reflection Do Not Mix</p>
+<ul>
+<li>
+<p>Slow on devices below 1GHZ even with JIT enabled</p>
+</li>
+<li>
+<p>Huge battery drain</p>
+</li>
+</ul>
+<p>Thus we avoid using java reflection to grab the drawable components of the
+title bar and changing...</p></section>
+                  
+              </div>
+          </div>
+        
+          <div class="slide">
+              <div class="inner">
+                  
+                  <header><h1>Slide #6</h1></header>
+                  
+                  
+                      <section><p>So How Do we customize the title bar without using java reflection?</p>
+<ul>
+<li>Use Window Extended features</li>
+</ul></section>
+                  
+              </div>
+          </div>
+        
+          <div class="slide">
+              <div class="inner">
+                  
+                  <header><h1>Slide #7</h1></header>
+                  
+                  
+                      <section><p><img alt="Window Extended" src="android_window_extended.png" /></p></section>
+                  
+              </div>
+          </div>
+        
+          <div class="slide">
+              <div class="inner">
+                  
+                  <header><h1>Slide #8</h1></header>
+                  
+                  
+                      <section><p>Two layout files are used, one for content and one for the title layout</p>
+<pre><div class="highlight"><pre style="line-height: 125%"><span class="lineno">1</span> requestWindowFeature<span style="color: #666666">(</span>Window<span style="color: #666666">.</span><span style="color: #7D9029">FEATURE_CUSTOM_TITLE</span><span style="color: #666666">);</span>
+<span class="lineno">2</span> setContentView<span style="color: #666666">(</span>R<span style="color: #666666">.</span><span style="color: #7D9029">layout</span><span style="color: #666666">.</span><span style="color: #7D9029">main</span><span style="color: #666666">);</span>
+<span class="lineno">3</span> getWindow<span style="color: #666666">().</span><span style="color: #7D9029">setFeatureInt</span><span style="color: #666666">(</span>Window<span style="color: #666666">.</span><span style="color: #7D9029">FEATURE_CUSTOM_TITLE</span><span style="color: #666666">,</span> R<span style="color: #666666">.</span><span style="color: #7D9029">layout</span><span style="color: #666666">.</span><span style="color: #7D9029">title</span><span style="color: #666666">);</span>
+</pre></div>
+</pre></section>
+                  
+              </div>
+          </div>
+        
+          <div class="slide">
+              <div class="inner">
+                  
+                  <header><h1>Slide #9</h1></header>
+                  
+                  
+                      <section><p>By using a selector file in title layout you can have the imageview act as a
+button..</p>
+<pre><div class="highlight"><pre style="line-height: 125%"><span class="lineno"> 1</span> <span style="color: #BC7A00">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="lineno"> 2</span>    <span style="color: #008000; font-weight: bold">&lt;RelativeLayout</span> <span style="color: #7D9029">android:id=</span><span style="color: #BA2121">&quot;@+id/header&quot;</span>
+<span class="lineno"> 3</span>       <span style="color: #7D9029">xmlns:android=</span><span style="color: #BA2121">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+<span class="lineno"> 4</span>       <span style="color: #7D9029">android:layout_height=</span><span style="color: #BA2121">&quot;wrap_content&quot;</span>
+<span class="lineno"> 5</span>       <span style="color: #7D9029">android:layout_width=</span><span style="color: #BA2121">&quot;fill_parent&quot;</span>
+<span class="lineno"> 6</span>       <span style="color: #7D9029">android:background=</span><span style="color: #BA2121">&quot;#066dc9&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>
+<span class="lineno"> 7</span>    <span style="color: #008000; font-weight: bold">&lt;ImageView</span> <span style="color: #7D9029">android:src=</span><span style="color: #BA2121">&quot;@drawable/companylogo&quot;</span>
+<span class="lineno"> 8</span>        <span style="color: #7D9029">android:layout_width=</span><span style="color: #BA2121">&quot;wrap_content&quot;</span>
+<span class="lineno"> 9</span>        <span style="color: #7D9029">android:layout_alignParentLeft=</span><span style="color: #BA2121">&quot;true&quot;</span>
+<span class="lineno">10</span>        <span style="color: #7D9029">android:layout_centerVertical=</span><span style="color: #BA2121">&quot;true&quot;</span>
+<span class="lineno">11</span>        <span style="color: #7D9029">android:id=</span><span style="color: #BA2121">&quot;@+id/back&quot;</span>
+<span class="lineno">12</span>        <span style="color: #7D9029">android:layout_height=</span><span style="color: #BA2121">&quot;wrap_content&quot;</span>
+<span class="lineno">13</span>        <span style="color: #7D9029">android:layout_alignParentTop=</span><span style="color: #BA2121">&quot;true&quot;</span> <span style="color: #008000; font-weight: bold">/&gt;</span>
+<span class="lineno">14</span>    <span style="color: #008000; font-weight: bold">&lt;TextView</span> <span style="color: #7D9029">android:id=</span><span style="color: #BA2121">&quot;@+id/title&quot;</span>
+<span class="lineno">15</span>        <span style="color: #7D9029">android:layout_width=</span><span style="color: #BA2121">&quot;wrap_content&quot;</span>
+<span class="lineno">16</span>        <span style="color: #7D9029">android:gravity=</span><span style="color: #BA2121">&quot;center&quot;</span>
+<span class="lineno">17</span>        <span style="color: #7D9029">android:textSize=</span><span style="color: #BA2121">&quot;20px&quot;</span>
+<span class="lineno">18</span>        <span style="color: #7D9029">android:textColor=</span><span style="color: #BA2121">&quot;#ffffff&quot;</span>
+<span class="lineno">19</span>        <span style="color: #7D9029">android:layout_alignParentRight=</span><span style="color: #BA2121">&quot;true&quot;</span>
+<span class="lineno">20</span>        <span style="color: #7D9029">android:text=</span><span style="color: #BA2121">&quot;New Title&quot;</span>
+<span class="lineno">21</span>        <span style="color: #7D9029">android:background=</span><span style="color: #BA2121">&quot;#335370&quot;</span>
+<span class="lineno">22</span>        <span style="color: #7D9029">android:layout_height=</span><span style="color: #BA2121">&quot;wrap_content&quot;</span>
+<span class="lineno">23</span>        <span style="color: #7D9029">android:layout_alignParentTop=</span><span style="color: #BA2121">&quot;true&quot;</span>
+<span class="lineno">24</span>        <span style="color: #7D9029">android:padding=</span><span style="color: #BA2121">&quot;9dip&quot;</span>
+<span class="lineno">25</span>        <span style="color: #7D9029">android:layout_margin=</span><span style="color: #BA2121">&quot;5dip&quot;</span> <span style="color: #008000; font-weight: bold">/&gt;</span>
+<span class="lineno">26</span>   <span style="color: #008000; font-weight: bold">&lt;/RelativeLayout&gt;</span>
+</pre></div>
+</pre></section>
+                  
+              </div>
+          </div>
+        
+          <div class="slide">
+              <div class="inner">
+                  
+                  <header><h1>Slide #10</h1></header>
+                  
+                  
+                      <section><pre><div class="highlight"><pre style="line-height: 125%"><span class="lineno"> 1</span> <span style="color: #BC7A00">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="lineno"> 2</span>    <span style="color: #008000; font-weight: bold">&lt;selector</span> <span style="color: #7D9029">xmlns:android=</span><span style="color: #BA2121">&quot;http://schemas.android.com/apk/res/android&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>
+<span class="lineno"> 3</span> 
+<span class="lineno"> 4</span>      <span style="color: #008000; font-weight: bold">&lt;item</span> <span style="color: #7D9029">android:state_pressed=</span><span style="color: #BA2121">&quot;false&quot;</span>
+<span class="lineno"> 5</span>          <span style="color: #7D9029">android:drawable=</span><span style="color: #BA2121">&quot;@drawable/mobilebyteslogo_normal&quot;</span> <span style="color: #008000; font-weight: bold">/&gt;</span>
+<span class="lineno"> 6</span> 
+<span class="lineno"> 7</span>      <span style="color: #008000; font-weight: bold">&lt;item</span> <span style="color: #7D9029">android:state_pressed=</span><span style="color: #BA2121">&quot;true&quot;</span>
+<span class="lineno"> 8</span>         <span style="color: #7D9029">android:drawable=</span><span style="color: #BA2121">&quot;@drawable/mobilebyteslogo_pressed&quot;</span> <span style="color: #008000; font-weight: bold">/&gt;</span>
+<span class="lineno"> 9</span> 
+<span class="lineno">10</span>   <span style="color: #008000; font-weight: bold">&lt;/selector&gt;</span>
+</pre></div>
+</pre>
+<p>and of course the events code in onCreate</p>
+<pre><div class="highlight"><pre style="line-height: 125%"><span class="lineno">1</span> findViewById<span style="color: #666666">(</span>R<span style="color: #666666">.</span><span style="color: #7D9029">id</span><span style="color: #666666">.</span><span style="color: #7D9029">back</span><span style="color: #666666">).</span><span style="color: #7D9029">setOnClickListener</span><span style="color: #666666">(</span><span style="color: #008000; font-weight: bold">new</span> OnClickListener<span style="color: #666666">()</span> <span style="color: #666666">{</span>
+<span class="lineno">2</span> 
+<span class="lineno">3</span>         <span style="color: #008000; font-weight: bold">public</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">onClick</span><span style="color: #666666">(</span>View v<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+<span class="lineno">4</span>             dispatchKeyEvent<span style="color: #666666">(</span><span style="color: #008000; font-weight: bold">new</span> KeyEvent<span style="color: #666666">(</span>KeyEvent<span style="color: #666666">.</span><span style="color: #7D9029">ACTION_DOWN</span><span style="color: #666666">,</span>
+<span class="lineno">5</span>                     KeyEvent<span style="color: #666666">.</span><span style="color: #7D9029">KEYCODE_BACK</span><span style="color: #666666">));</span>
+<span class="lineno">6</span>             dispatchKeyEvent<span style="color: #666666">(</span><span style="color: #008000; font-weight: bold">new</span> KeyEvent<span style="color: #666666">(</span>KeyEvent<span style="color: #666666">.</span><span style="color: #7D9029">ACTION_UP</span><span style="color: #666666">,</span>
+<span class="lineno">7</span>                     KeyEvent<span style="color: #666666">.</span><span style="color: #7D9029">KEYCODE_BACK</span><span style="color: #666666">));</span>
+<span class="lineno">8</span>         <span style="color: #666666">}</span>
+<span class="lineno">9</span>     <span style="color: #666666">});</span>
+</pre></div>
+</pre></section>
+                  
+              </div>
+          </div>
+        
+          <div class="slide">
+              <div class="inner">
+                  
+                  <header><h1>Slide #11</h1></header>
+                  
+                  
+                      <section><p>Title text gets added in onCreate with</p>
+<pre><div class="highlight"><pre style="line-height: 125%"><span class="lineno">1</span> <span style="color: #666666">((</span>TextView<span style="color: #666666">)</span> findViewById<span style="color: #666666">(</span>R<span style="color: #666666">.</span><span style="color: #7D9029">id</span><span style="color: #666666">.</span><span style="color: #7D9029">title</span><span style="color: #666666">)).</span><span style="color: #7D9029">setText</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Custom Status Bar&quot;</span><span style="color: #666666">);</span>
+</pre></div>
+</pre></section>
+                  
+              </div>
+          </div>
+        
+          <div class="slide">
+              <div class="inner">
+                  
+                  <header><h1>Slide #12</h1></header>
+                  
+                  
+                      <section><p>Do not forget the Theme that sets the Title width as since we are
+using the Window Extended features we have to define a title width,
+otherwise we will get a default title width...first the style
+grabbing the default window background..</p>
+<pre><div class="highlight"><pre style="line-height: 125%"><span class="lineno">1</span> <span style="color: #BC7A00">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="lineno">2</span>     <span style="color: #008000; font-weight: bold">&lt;resources&gt;</span>
+<span class="lineno">3</span>       <span style="color: #008000; font-weight: bold">&lt;style</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;WindowTitleBackground&quot;</span>
+<span class="lineno">4</span>           <span style="color: #7D9029">parent=</span><span style="color: #BA2121">&quot;android:WindowTitleBackground&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>
+<span class="lineno">5</span>            <span style="color: #008000; font-weight: bold">&lt;item</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;android:background&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>
+<span class="lineno">6</span>                @android:color/transparent<span style="color: #008000; font-weight: bold">&lt;/item&gt;</span>
+<span class="lineno">7</span>       <span style="color: #008000; font-weight: bold">&lt;/style&gt;</span>
+<span class="lineno">8</span>     <span style="color: #008000; font-weight: bold">&lt;/resources&gt;</span>
+</pre></div>
+</pre>
+<p>Than our theme which we define in the sometimes in the application tag</p>
+<pre><div class="highlight"><pre style="line-height: 125%"><span class="lineno"> 1</span> <span style="color: #BC7A00">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="lineno"> 2</span>    <span style="color: #008000; font-weight: bold">&lt;resources&gt;</span>
+<span class="lineno"> 3</span>      <span style="color: #008000; font-weight: bold">&lt;style</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;MyTheme&quot;</span> <span style="color: #7D9029">parent=</span><span style="color: #BA2121">&quot;android:Theme&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>
+<span class="lineno"> 4</span>         <span style="color: #008000; font-weight: bold">&lt;item</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;android:windowTitleSize&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>54px<span style="color: #008000; font-weight: bold">&lt;/item&gt;</span>
+<span class="lineno"> 5</span>         <span style="color: #008000; font-weight: bold">&lt;item</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;android:windowTitleBackgroundStyle&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>
+<span class="lineno"> 6</span>             @style/WindowTitleBackground<span style="color: #008000; font-weight: bold">&lt;/item&gt;</span>
+<span class="lineno"> 7</span>         <span style="color: #008000; font-weight: bold">&lt;item</span> <span style="color: #7D9029">name=</span><span style="color: #BA2121">&quot;android:windowContentOverlay&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>
+<span class="lineno"> 8</span>             @drawable/title_bar_shadow2<span style="color: #008000; font-weight: bold">&lt;/item&gt;</span>
+<span class="lineno"> 9</span>      <span style="color: #008000; font-weight: bold">&lt;/style&gt;</span>
+<span class="lineno">10</span>   <span style="color: #008000; font-weight: bold">&lt;/resources&gt;</span>
+</pre></div>
+</pre></section>
+                  
+              </div>
+          </div>
+        
+          <div class="slide">
+              <div class="inner">
+                  
+                  <header><h1>Slide #13</h1></header>
+                  
+                  
+                      <section><ul>
+<li>Using only default settings in application tag
+ in AndroidManifest still gives a title bar flash, why?</li>
+</ul></section>
+                  
+              </div>
+          </div>
+        
+          <div class="slide">
+              <div class="inner">
+                  
+                  <header><h1>Slide #14</h1></header>
+                  
+                  
+                      <section><ul>
+<li>
+<p>Using Default AndroidManifest settings applies the title bar
+  default style theme before onCreate fully initializes, hence the
+  title bar flash even though you have called</p>
+<p>requestWindowFeature(Window.FEATURE_NO_TITLE);</p>
+</li>
+</ul></section>
+                  
+              </div>
+          </div>
+        
+          <div class="slide">
+              <div class="inner">
+                  
+                  <header><h1>Slide #15</h1></header>
+                  
+                  
+                      <section><p>So we setup a splash activity that posts a delayed intent request on a thread
+and we set the androidManifest application tag to use this theme</p>
+<pre><div class="highlight"><pre style="line-height: 125%"><span class="lineno">1</span> <span style="color: #008000; font-weight: bold">&lt;application</span> <span style="color: #7D9029">android:icon=</span><span style="color: #BA2121">&quot;@drawable/andcustomtitleicon&quot;</span>
+<span class="lineno">2</span>   <span style="color: #7D9029">android:label=</span><span style="color: #BA2121">&quot;@string/app_name&quot;</span>
+<span class="lineno">3</span>     <span style="color: #7D9029">android:theme=</span><span style="color: #BA2121">&quot;@android:style/Theme.NoTitleBar&quot;</span><span style="color: #008000; font-weight: bold">&gt;</span>
+</pre></div>
+</pre></section>
+                  
+              </div>
+          </div>
+        
+          <div class="slide">
+              <div class="inner">
+                  
+                  <header><h1>Slide #16</h1></header>
+                  
+                  
+                      <section><p><img alt="androidcutomtitle" src="andcustomtitleicon.png" /></p></section>
+                  
+              </div>
+          </div>
+        
+      </div>
+    </div>
+    <script>
+        main()
+    </script>
+</body>
+</html>
