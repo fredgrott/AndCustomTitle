@@ -1,4 +1,4 @@
-![AndCustomTitle(http://github.com/shareme/andcustomtitle/raw/master/screenshots/andcustomtitleicon.png)
+![AndCustomTitle](http://github.com/shareme/andcustomtitle/raw/master/screenshots/andcustomtitleicon.png)
 # Project Name
 
 AndCustomTitle uses themes and extended Window features of Android to customize
@@ -37,6 +37,9 @@ http://www.apache.org/licenses/LICENSE-2.0.html
 
 You can download the source and re-use or you can also download the binary to
 see it at work in your android device.
+
+[AndCustomTitle APK via QR](http://github.com/downloads/shareme/AndCustomTitle/AndCustomTitle.apk/qr_code)
+[AndCustomTitle APK via http](http://github.com/shareme/andcustomtitle/raw/master/screenshots/AndCustomTitle.apk)
 
 # Credits
 
