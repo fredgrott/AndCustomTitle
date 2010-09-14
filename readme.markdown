@@ -43,9 +43,11 @@ see it at work in your android device.
 
 # Notes
 
-Slides on the techniques used are at:
+Slides on the techniques used can be downloaded at:
 
-[Android UI Patterns-Custom Title](http://github.com/shareme/andcustomtitle/raw/master/slides/presentation.html)
+[Android UI Patterns-Custom Title](http://github.com/downloads/shareme/AndCustomTitle/presentation.html)
+
+Once downloaded, open it in your browser.
 
 
 # Credits
