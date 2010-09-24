@@ -60,7 +60,7 @@
 
      fredgrott
      ====================================================================== -->
-<project name="AndCooperANT" basedir="." default="help">
+<project name="AndCustomTitle" basedir="." default="help">
     <description>
             AndCooperANT for Android Java development
     </description>

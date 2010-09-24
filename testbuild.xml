@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="AndCooperANT" default="run-tests">
+<project name="AndCustomTitle" default="run-tests">
 <!-- build.xml normal file in Test Project and we execute
      everything from this testbuild.xml file.
      This file uses the default test runner...

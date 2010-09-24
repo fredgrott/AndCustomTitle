@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <?xml-stylesheet type='text/xsl' href='reportXMLtoHTML.xsl'?>
-<classycle title='AndCooperANT' date='2010-09-24'>
+<classycle title='AndCustomTitle' date='2010-09-24'>
   <cycles>
     <cycle name="com.mobilebytes.andcustomtitle.MainActivity and inner classes" size="2" longestWalk="0" girth="2" radius="1" diameter="1" bestFragmentSize="1">
       <classes>
