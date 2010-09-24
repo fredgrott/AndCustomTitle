@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="5.0">
+<file name="/home/fredgrott/my35ws_github/AndCustomTitle/src/com/mobilebytes/andcustomtitle/MainActivity.java">
+<error line="56" column="5" severity="warning" message="Method &apos;onCreate&apos; is not designed for extension - needs to be abstract, final or empty." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+<error line="73" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="75" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="77" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="96" severity="warning" message="Line is longer than 80 characters." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+</file>
+<file name="/home/fredgrott/my35ws_github/AndCustomTitle/src/com/mobilebytes/andcustomtitle/Splash.java">
+<error line="45" column="5" severity="warning" message="Method &apos;onCreate&apos; is not designed for extension - needs to be abstract, final or empty." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+</file>
+<file name="/home/fredgrott/my35ws_github/AndCustomTitle/src/com/mobilebytes/andcustomtitle/package-info.java">
+</file>
+</checkstyle>

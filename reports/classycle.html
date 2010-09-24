@@ -1,0 +1,204 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Classycle Analysis of AndCooperANT</title>
+<link rel="stylesheet" type="text/css" href="andcooper.reports.css">
+<script type="text/javascript">
+        <!--
+          var number = /^\d*$/;
+
+          function showTable(title, headers, content) {
+            text = "<h3>" + title + "</h3><p>";
+            if (content.length > 0) {
+              text += "<table border=\"1\" cellpadding=\"5\" cellspacing=\"0\">";
+              if (headers.length > 0) {
+                text += "<tr>";
+                headerArray = headers.split(",");
+                for (i = 0; i < headerArray.length; i++) {
+                  text += "<th>" + headerArray[i] + "</th>";
+                }
+                text += "</tr>";
+              }
+              rows = content.split(";");
+              for (i = 0; i < rows.length; i++) {
+                if (rows[i].length > 0) {
+                  columns = rows[i].split(",");
+                  text += "<tr>";
+                  for (j = 0; j < columns.length; j++) {
+                    text += "<td" + (number.test(columns[j]) ? " align=\"right\">" : ">") + columns[j] + "</td>";
+                  }
+                  text += "</tr>";
+                }
+              }
+              text += "</table>";
+            }
+            showText(text);
+          }
+
+          function showText(text) {
+            list = window.open("", "list",
+                "dependent=yes,location=no,menubar=yes,resizable=yes,toolbar=no,scrollbars=yes,width=500,height=400");
+            list.document.close();
+            list.document.open();
+            list.document.write("<html><head><style type=\"text/css\">");
+            list.document.write("body { font-family:Helvetica,Arial,sans-serif; } ");
+            list.document.write(".link { cursor:pointer;text-decoration:underline; } ");
+            list.document.writeln("th { background-color:#aaaaaa; } </style></head><body>");
+            list.document.writeln(text);
+            list.document.writeln("</body></html>");
+            list.document.close();
+            list.focus();
+          }
+        //-->
+        
+        </script>
+</head>
+<body>
+<h1>
+<img src="images/companylogo.png"></h1>
+<h1>
+<a href="http://classycle.sourceforge.net" alt="Classcyle Home Page"><img src="images/logo.png" alt="Classcyle" width="200" height="135" border="0" align="middle" hspace="4"></a>
+            Analysis of AndCooperANT</h1>
+        Date: 2010-09-24<hr size="2">
+<h2>Summary</h2>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td align="right">3</td><td width="5"></td><td><a href="#cycles">class cycles</a></td>
+</tr>
+<tr>
+<td align="right">2</td><td width="5"></td><td><a href="#layers">class layers</a></td>
+</tr>
+<tr>
+<td align="right">11</td><td width="5"></td><td><a href="#classes">classes</a> (using
+              14
+              external classes) grouped in 1 packages
+            </td>
+</tr>
+<tr>
+<td align="right">no</td><td width="5"></td><td>package cycles</td>
+</tr>
+</table>
+<p></p>
+<table border="1" cellpadding="5" cellspacing="0" width="770">
+<tr>
+<th>Type</th><th>Number of classes</th><th>Averaged (maximum) size in bytes</th><th>Averaged (maximum) number of usage by other classes</th><th>Averaged (maximum) number of used internal classes</th><th>Averaged (maximum) number of used external clasess</th>
+</tr>
+<tr>
+<td><nobr>0% Interfaces</nobr></td><td align="right">0</td><td align="right">NaN
+        ()
+      </td><td align="right">NaN
+        ()
+      </td><td align="right">NaN
+        ()
+      </td><td align="right">NaN
+        ()
+      </td>
+</tr>
+<tr>
+<td><nobr>0% Abstract classes</nobr></td><td align="right">0</td><td align="right">NaN
+        ()
+      </td><td align="right">NaN
+        ()
+      </td><td align="right">NaN
+        ()
+      </td><td align="right">NaN
+        ()
+      </td>
+</tr>
+<tr>
+<td><nobr>100% Concrete classes</nobr></td><td align="right">11</td><td align="right">719
+        ()
+      </td><td align="right">1.5
+        ()
+      </td><td align="right">1.5
+        ()
+      </td><td align="right">2.6
+        ()
+      </td>
+</tr>
+</table>
+<hr size="2">
+<h2>
+<a name="cycles">Cycles</a>
+</h2>
+    Click on <img src="images/link.png"> behind a number and a window will pop up showing more details.
+  <table border="1" cellpadding="5" cellspacing="0" width="770">
+<tr>
+<th>Name</th><th>Number of classes</th><th>Best Fragment Size</th><th>Girth</th><th>Radius</th><th>Diameter</th><th>Layer</th>
+</tr>
+<tr>
+<td><a name="com.mobilebytes.andcustomtitle.R_and_inner_classes"></a><img src="images/inner.png" alt="inner class" width="20" height="20" align="middle" hspace="4">com.mobilebytes.andcustomtitle.R and inner classes</td><td align="right">7<a style="cursor:pointer;" onClick="javascript:showTable(&quot;Classes of cycle com.mobilebytes.andcustomtitle.R and inner classes:&quot;,&quot;Name,Maximum fragment size,Eccentricity&quot;,&quot;&quot;)"><img src="images/link.png" hspace="3"></a></td><td align="right">1<a style="cursor:pointer;" onClick="javascript:showTable(&quot;Best fragmenter(s) of cycle com.mobilebytes.andcustomtitle.R and inner classes:&quot;,&quot;&quot;,&quot;&quot;)"><img src="images/link.png" hspace="3"></a></td><td align="right">2</td><td align="right">1<a style="cursor:pointer;" onClick="javascript:showTable(&quot;Center classes of cycle com.mobilebytes.andcustomtitle.R and inner classes:&quot;,&quot;&quot;,&quot;&quot;)"><img src="images/link.png" hspace="3"></a></td><td align="right">2</td><td align="right">0</td>
+</tr>
+<tr>
+<td><a name="com.mobilebytes.andcustomtitle.MainActivity_and_inner_classes"></a><img src="images/inner.png" alt="inner class" width="20" height="20" align="middle" hspace="4">com.mobilebytes.andcustomtitle.MainActivity and inner classes</td><td align="right">2<a style="cursor:pointer;" onClick="javascript:showTable(&quot;Classes of cycle com.mobilebytes.andcustomtitle.MainActivity and inner classes:&quot;,&quot;Name,Maximum fragment size,Eccentricity&quot;,&quot;&quot;)"><img src="images/link.png" hspace="3"></a></td><td align="right">1<a style="cursor:pointer;" onClick="javascript:showTable(&quot;Best fragmenter(s) of cycle com.mobilebytes.andcustomtitle.MainActivity and inner classes:&quot;,&quot;&quot;,&quot;&quot;)"><img src="images/link.png" hspace="3"></a></td><td align="right">2</td><td align="right">1<a style="cursor:pointer;" onClick="javascript:showTable(&quot;Center classes of cycle com.mobilebytes.andcustomtitle.MainActivity and inner classes:&quot;,&quot;&quot;,&quot;&quot;)"><img src="images/link.png" hspace="3"></a></td><td align="right">1</td><td align="right">0</td>
+</tr>
+<tr>
+<td><a name="com.mobilebytes.andcustomtitle.Splash_and_inner_classes"></a><img src="images/inner.png" alt="inner class" width="20" height="20" align="middle" hspace="4">com.mobilebytes.andcustomtitle.Splash and inner classes</td><td align="right">2<a style="cursor:pointer;" onClick="javascript:showTable(&quot;Classes of cycle com.mobilebytes.andcustomtitle.Splash and inner classes:&quot;,&quot;Name,Maximum fragment size,Eccentricity&quot;,&quot;&quot;)"><img src="images/link.png" hspace="3"></a></td><td align="right">1<a style="cursor:pointer;" onClick="javascript:showTable(&quot;Best fragmenter(s) of cycle com.mobilebytes.andcustomtitle.Splash and inner classes:&quot;,&quot;&quot;,&quot;&quot;)"><img src="images/link.png" hspace="3"></a></td><td align="right">2</td><td align="right">1<a style="cursor:pointer;" onClick="javascript:showTable(&quot;Center classes of cycle com.mobilebytes.andcustomtitle.Splash and inner classes:&quot;,&quot;&quot;,&quot;&quot;)"><img src="images/link.png" hspace="3"></a></td><td align="right">1</td><td align="right">1</td>
+</tr>
+</table>
+<hr size="2">
+<h2>
+<a name="layers">Layers</a>
+</h2>
+    Click on <img src="images/link.png"> behind a number and a window will pop up showing more details.
+  <table border="1" cellpadding="5" cellspacing="0" width="770">
+<tr>
+<td><b>Layer</b></td><td align="center">0</td><td align="center">1</td>
+</tr>
+<tr>
+<td><b>Number of classes</b></td><td align="center">9<a style="cursor:pointer;" onClick="javascript:showTable(&quot;Classes of layer 0:&quot;,&quot;&quot;,&quot;&quot;)"><img src="images/link.png" hspace="3"></a></td><td align="center">2<a style="cursor:pointer;" onClick="javascript:showTable(&quot;Classes of layer 1:&quot;,&quot;&quot;,&quot;&quot;)"><img src="images/link.png" hspace="3"></a></td>
+</tr>
+</table>
+<hr size="2">
+<h2>
+<a name="classes">Classes and Packages
+      </a>
+</h2>
+    Click on <img src="images/mixedCycleLink.png" align="center"> or
+    <img src="images/innerCycleLink.png" align="center"> to go to the cycle to
+    which the class/package belongs.
+    <br>
+    Click on <img src="images/link.png"> behind a number and a window will pop up showing more details.
+  <table cellpadding="3" cellspacing="0" border="1" width="770">
+<tr>
+<th>Class/Package</th><th>Size</th><th>Used by</th><th>Uses internal</th><th>Uses external</th><th>Layer</th><th>Source(s)</th>
+</tr>
+<tr>
+<td><nobr><img src="images/package.png" alt="package" width="20" height="20" align="middle" hspace="4"><a name="com.mobilebytes.andcustomtitle">com.mobilebytes.andcustomtitle</a></nobr></td><td align="right">11</td><td align="right">1<a style="cursor:pointer;" onClick="javascript:showTable(&quot;Packages using com.mobilebytes.andcustomtitle:&quot;,&quot;&quot;,&quot;&quot;)"><img src="images/link.png" hspace="3"></a></td><td align="right">1<a style="cursor:pointer;" onClick="javascript:showTable(&quot;com.mobilebytes.andcustomtitle uses:&quot;,&quot;&quot;,&quot;&quot;)"><img src="images/link.png" hspace="3"></a></td><td align="right">6<a style="cursor:pointer;" onClick="javascript:showTable(&quot;com.mobilebytes.andcustomtitle uses:&quot;,&quot;&quot;,&quot;&quot;)"><img src="images/link.png" hspace="3"></a></td><td align="right">0</td><td align="left"></td>
+</tr>
+<tr>
+<td><nobr><img src="images/class.png" alt="class" width="20" height="20" align="middle" hspace="4"><a name="com.mobilebytes.andcustomtitle.MainActivity">com.mobilebytes.andcustomtitle.MainActivity</a><a href="#com.mobilebytes.andcustomtitle.MainActivity_and_inner_classes" title="Member of cycle com.mobilebytes.andcustomtitle.MainActivity and inner classes"><img src="images/innerCycleLink.png"></a></nobr></td><td align="right">1226</td><td align="right">2<a style="cursor:pointer;" onClick="javascript:showTable(&quot;Classes using com.mobilebytes.andcustomtitle.MainActivity:&quot;,&quot;&quot;,&quot;&quot;)"><img src="images/link.png" hspace="3"></a></td><td align="right">1<a style="cursor:pointer;" onClick="javascript:showTable(&quot;com.mobilebytes.andcustomtitle.MainActivity uses:&quot;,&quot;&quot;,&quot;&quot;)"><img src="images/link.png" hspace="3"></a></td><td align="right">7<a style="cursor:pointer;" onClick="javascript:showTable(&quot;com.mobilebytes.andcustomtitle.MainActivity uses:&quot;,&quot;&quot;,&quot;&quot;)"><img src="images/link.png" hspace="3"></a></td><td align="right">0</td><td align="left"></td>
+</tr>
+<tr>
+<td><nobr><img src="images/innerclass.png" alt="inner class" width="20" height="20" align="middle" hspace="4"><a name="com.mobilebytes.andcustomtitle.MainActivity$1">com.mobilebytes.andcustomtitle.MainActivity$1</a><a href="#com.mobilebytes.andcustomtitle.MainActivity_and_inner_classes" title="Member of cycle com.mobilebytes.andcustomtitle.MainActivity and inner classes"><img src="images/innerCycleLink.png"></a></nobr></td><td align="right">973</td><td align="right">1<a style="cursor:pointer;" onClick="javascript:showTable(&quot;Classes using com.mobilebytes.andcustomtitle.MainActivity$1:&quot;,&quot;&quot;,&quot;&quot;)"><img src="images/link.png" hspace="3"></a></td><td align="right">1<a style="cursor:pointer;" onClick="javascript:showTable(&quot;com.mobilebytes.andcustomtitle.MainActivity$1 uses:&quot;,&quot;&quot;,&quot;&quot;)"><img src="images/link.png" hspace="3"></a></td><td align="right">5<a style="cursor:pointer;" onClick="javascript:showTable(&quot;com.mobilebytes.andcustomtitle.MainActivity$1 uses:&quot;,&quot;&quot;,&quot;&quot;)"><img src="images/link.png" hspace="3"></a></td><td align="right">0</td><td align="left"></td>
+</tr>
+<tr>
+<td><nobr><img src="images/class.png" alt="class" width="20" height="20" align="middle" hspace="4"><a name="com.mobilebytes.andcustomtitle.R">com.mobilebytes.andcustomtitle.R</a><a href="#com.mobilebytes.andcustomtitle.R_and_inner_classes" title="Member of cycle com.mobilebytes.andcustomtitle.R and inner classes"><img src="images/innerCycleLink.png"></a></nobr></td><td align="right">679</td><td align="right">6<a style="cursor:pointer;" onClick="javascript:showTable(&quot;Classes using com.mobilebytes.andcustomtitle.R:&quot;,&quot;&quot;,&quot;&quot;)"><img src="images/link.png" hspace="3"></a></td><td align="right">6<a style="cursor:pointer;" onClick="javascript:showTable(&quot;com.mobilebytes.andcustomtitle.R uses:&quot;,&quot;&quot;,&quot;&quot;)"><img src="images/link.png" hspace="3"></a></td><td align="right">1<a style="cursor:pointer;" onClick="javascript:showTable(&quot;com.mobilebytes.andcustomtitle.R uses:&quot;,&quot;&quot;,&quot;&quot;)"><img src="images/link.png" hspace="3"></a></td><td align="right">0</td><td align="left"></td>
+</tr>
+<tr>
+<td><nobr><img src="images/innerclass.png" alt="inner class" width="20" height="20" align="middle" hspace="4"><a name="com.mobilebytes.andcustomtitle.R$attr">com.mobilebytes.andcustomtitle.R$attr</a><a href="#com.mobilebytes.andcustomtitle.R_and_inner_classes" title="Member of cycle com.mobilebytes.andcustomtitle.R and inner classes"><img src="images/innerCycleLink.png"></a></nobr></td><td align="right">376</td><td align="right">1<a style="cursor:pointer;" onClick="javascript:showTable(&quot;Classes using com.mobilebytes.andcustomtitle.R$attr:&quot;,&quot;&quot;,&quot;&quot;)"><img src="images/link.png" hspace="3"></a></td><td align="right">1<a style="cursor:pointer;" onClick="javascript:showTable(&quot;com.mobilebytes.andcustomtitle.R$attr uses:&quot;,&quot;&quot;,&quot;&quot;)"><img src="images/link.png" hspace="3"></a></td><td align="right">1<a style="cursor:pointer;" onClick="javascript:showTable(&quot;com.mobilebytes.andcustomtitle.R$attr uses:&quot;,&quot;&quot;,&quot;&quot;)"><img src="images/link.png" hspace="3"></a></td><td align="right">0</td><td align="left"></td>
+</tr>
+<tr>
+<td><nobr><img src="images/innerclass.png" alt="inner class" width="20" height="20" align="middle" hspace="4"><a name="com.mobilebytes.andcustomtitle.R$drawable">com.mobilebytes.andcustomtitle.R$drawable</a><a href="#com.mobilebytes.andcustomtitle.R_and_inner_classes" title="Member of cycle com.mobilebytes.andcustomtitle.R and inner classes"><img src="images/innerCycleLink.png"></a></nobr></td><td align="right">836</td><td align="right">1<a style="cursor:pointer;" onClick="javascript:showTable(&quot;Classes using com.mobilebytes.andcustomtitle.R$drawable:&quot;,&quot;&quot;,&quot;&quot;)"><img src="images/link.png" hspace="3"></a></td><td align="right">1<a style="cursor:pointer;" onClick="javascript:showTable(&quot;com.mobilebytes.andcustomtitle.R$drawable uses:&quot;,&quot;&quot;,&quot;&quot;)"><img src="images/link.png" hspace="3"></a></td><td align="right">1<a style="cursor:pointer;" onClick="javascript:showTable(&quot;com.mobilebytes.andcustomtitle.R$drawable uses:&quot;,&quot;&quot;,&quot;&quot;)"><img src="images/link.png" hspace="3"></a></td><td align="right">0</td><td align="left"></td>
+</tr>
+<tr>
+<td><nobr><img src="images/innerclass.png" alt="inner class" width="20" height="20" align="middle" hspace="4"><a name="com.mobilebytes.andcustomtitle.R$id">com.mobilebytes.andcustomtitle.R$id</a><a href="#com.mobilebytes.andcustomtitle.R_and_inner_classes" title="Member of cycle com.mobilebytes.andcustomtitle.R and inner classes"><img src="images/innerCycleLink.png"></a></nobr></td><td align="right">538</td><td align="right">1<a style="cursor:pointer;" onClick="javascript:showTable(&quot;Classes using com.mobilebytes.andcustomtitle.R$id:&quot;,&quot;&quot;,&quot;&quot;)"><img src="images/link.png" hspace="3"></a></td><td align="right">1<a style="cursor:pointer;" onClick="javascript:showTable(&quot;com.mobilebytes.andcustomtitle.R$id uses:&quot;,&quot;&quot;,&quot;&quot;)"><img src="images/link.png" hspace="3"></a></td><td align="right">1<a style="cursor:pointer;" onClick="javascript:showTable(&quot;com.mobilebytes.andcustomtitle.R$id uses:&quot;,&quot;&quot;,&quot;&quot;)"><img src="images/link.png" hspace="3"></a></td><td align="right">0</td><td align="left"></td>
+</tr>
+<tr>
+<td><nobr><img src="images/innerclass.png" alt="inner class" width="20" height="20" align="middle" hspace="4"><a name="com.mobilebytes.andcustomtitle.R$layout">com.mobilebytes.andcustomtitle.R$layout</a><a href="#com.mobilebytes.andcustomtitle.R_and_inner_classes" title="Member of cycle com.mobilebytes.andcustomtitle.R and inner classes"><img src="images/innerCycleLink.png"></a></nobr></td><td align="right">495</td><td align="right">1<a style="cursor:pointer;" onClick="javascript:showTable(&quot;Classes using com.mobilebytes.andcustomtitle.R$layout:&quot;,&quot;&quot;,&quot;&quot;)"><img src="images/link.png" hspace="3"></a></td><td align="right">1<a style="cursor:pointer;" onClick="javascript:showTable(&quot;com.mobilebytes.andcustomtitle.R$layout uses:&quot;,&quot;&quot;,&quot;&quot;)"><img src="images/link.png" hspace="3"></a></td><td align="right">1<a style="cursor:pointer;" onClick="javascript:showTable(&quot;com.mobilebytes.andcustomtitle.R$layout uses:&quot;,&quot;&quot;,&quot;&quot;)"><img src="images/link.png" hspace="3"></a></td><td align="right">0</td><td align="left"></td>
+</tr>
+<tr>
+<td><nobr><img src="images/innerclass.png" alt="inner class" width="20" height="20" align="middle" hspace="4"><a name="com.mobilebytes.andcustomtitle.R$string">com.mobilebytes.andcustomtitle.R$string</a><a href="#com.mobilebytes.andcustomtitle.R_and_inner_classes" title="Member of cycle com.mobilebytes.andcustomtitle.R and inner classes"><img src="images/innerCycleLink.png"></a></nobr></td><td align="right">463</td><td align="right">1<a style="cursor:pointer;" onClick="javascript:showTable(&quot;Classes using com.mobilebytes.andcustomtitle.R$string:&quot;,&quot;&quot;,&quot;&quot;)"><img src="images/link.png" hspace="3"></a></td><td align="right">1<a style="cursor:pointer;" onClick="javascript:showTable(&quot;com.mobilebytes.andcustomtitle.R$string uses:&quot;,&quot;&quot;,&quot;&quot;)"><img src="images/link.png" hspace="3"></a></td><td align="right">1<a style="cursor:pointer;" onClick="javascript:showTable(&quot;com.mobilebytes.andcustomtitle.R$string uses:&quot;,&quot;&quot;,&quot;&quot;)"><img src="images/link.png" hspace="3"></a></td><td align="right">0</td><td align="left"></td>
+</tr>
+<tr>
+<td><nobr><img src="images/innerclass.png" alt="inner class" width="20" height="20" align="middle" hspace="4"><a name="com.mobilebytes.andcustomtitle.R$style">com.mobilebytes.andcustomtitle.R$style</a><a href="#com.mobilebytes.andcustomtitle.R_and_inner_classes" title="Member of cycle com.mobilebytes.andcustomtitle.R and inner classes"><img src="images/innerCycleLink.png"></a></nobr></td><td align="right">475</td><td align="right">1<a style="cursor:pointer;" onClick="javascript:showTable(&quot;Classes using com.mobilebytes.andcustomtitle.R$style:&quot;,&quot;&quot;,&quot;&quot;)"><img src="images/link.png" hspace="3"></a></td><td align="right">1<a style="cursor:pointer;" onClick="javascript:showTable(&quot;com.mobilebytes.andcustomtitle.R$style uses:&quot;,&quot;&quot;,&quot;&quot;)"><img src="images/link.png" hspace="3"></a></td><td align="right">1<a style="cursor:pointer;" onClick="javascript:showTable(&quot;com.mobilebytes.andcustomtitle.R$style uses:&quot;,&quot;&quot;,&quot;&quot;)"><img src="images/link.png" hspace="3"></a></td><td align="right">0</td><td align="left"></td>
+</tr>
+<tr>
+<td><nobr><img src="images/class.png" alt="class" width="20" height="20" align="middle" hspace="4"><a name="com.mobilebytes.andcustomtitle.Splash">com.mobilebytes.andcustomtitle.Splash</a><a href="#com.mobilebytes.andcustomtitle.Splash_and_inner_classes" title="Member of cycle com.mobilebytes.andcustomtitle.Splash and inner classes"><img src="images/innerCycleLink.png"></a></nobr></td><td align="right">881</td><td align="right">1<a style="cursor:pointer;" onClick="javascript:showTable(&quot;Classes using com.mobilebytes.andcustomtitle.Splash:&quot;,&quot;&quot;,&quot;&quot;)"><img src="images/link.png" hspace="3"></a></td><td align="right">1<a style="cursor:pointer;" onClick="javascript:showTable(&quot;com.mobilebytes.andcustomtitle.Splash uses:&quot;,&quot;&quot;,&quot;&quot;)"><img src="images/link.png" hspace="3"></a></td><td align="right">4<a style="cursor:pointer;" onClick="javascript:showTable(&quot;com.mobilebytes.andcustomtitle.Splash uses:&quot;,&quot;&quot;,&quot;&quot;)"><img src="images/link.png" hspace="3"></a></td><td align="right">1</td><td align="left"></td>
+</tr>
+<tr>
+<td><nobr><img src="images/innerclass.png" alt="inner class" width="20" height="20" align="middle" hspace="4"><a name="com.mobilebytes.andcustomtitle.Splash$1">com.mobilebytes.andcustomtitle.Splash$1</a><a href="#com.mobilebytes.andcustomtitle.Splash_and_inner_classes" title="Member of cycle com.mobilebytes.andcustomtitle.Splash and inner classes"><img src="images/innerCycleLink.png"></a></nobr></td><td align="right">965</td><td align="right">1<a style="cursor:pointer;" onClick="javascript:showTable(&quot;Classes using com.mobilebytes.andcustomtitle.Splash$1:&quot;,&quot;&quot;,&quot;&quot;)"><img src="images/link.png" hspace="3"></a></td><td align="right">2<a style="cursor:pointer;" onClick="javascript:showTable(&quot;com.mobilebytes.andcustomtitle.Splash$1 uses:&quot;,&quot;&quot;,&quot;&quot;)"><img src="images/link.png" hspace="3"></a></td><td align="right">6<a style="cursor:pointer;" onClick="javascript:showTable(&quot;com.mobilebytes.andcustomtitle.Splash$1 uses:&quot;,&quot;&quot;,&quot;&quot;)"><img src="images/link.png" hspace="3"></a></td><td align="right">1</td><td align="left"></td>
+</tr>
+</table>
+</body>
+</html>

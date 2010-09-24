@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?xml-stylesheet type='text/xsl' href='reportXMLtoHTML.xsl'?>
+<classycle title='AndCooperANT' date='2010-09-24'>
+  <cycles>
+    <cycle name="com.mobilebytes.andcustomtitle.MainActivity and inner classes" size="2" longestWalk="0" girth="2" radius="1" diameter="1" bestFragmentSize="1">
+      <classes>
+        <classRef name="com.mobilebytes.andcustomtitle.MainActivity$1" eccentricity="1" maximumFragmentSize="1"/>
+        <classRef name="com.mobilebytes.andcustomtitle.MainActivity" eccentricity="1" maximumFragmentSize="1"/>
+      </classes>
+      <centerClasses>
+        <classRef name="com.mobilebytes.andcustomtitle.MainActivity$1"/>
+        <classRef name="com.mobilebytes.andcustomtitle.MainActivity"/>
+      </centerClasses>
+      <bestFragmenters>
+        <classRef name="com.mobilebytes.andcustomtitle.MainActivity$1"/>
+        <classRef name="com.mobilebytes.andcustomtitle.MainActivity"/>
+      </bestFragmenters>
+    </cycle>
+    <cycle name="com.mobilebytes.andcustomtitle.R and inner classes" size="7" longestWalk="0" girth="2" radius="1" diameter="2" bestFragmentSize="1">
+      <classes>
+        <classRef name="com.mobilebytes.andcustomtitle.R$string" eccentricity="2" maximumFragmentSize="6"/>
+        <classRef name="com.mobilebytes.andcustomtitle.R" eccentricity="1" maximumFragmentSize="1"/>
+        <classRef name="com.mobilebytes.andcustomtitle.R$style" eccentricity="2" maximumFragmentSize="6"/>
+        <classRef name="com.mobilebytes.andcustomtitle.R$layout" eccentricity="2" maximumFragmentSize="6"/>
+        <classRef name="com.mobilebytes.andcustomtitle.R$id" eccentricity="2" maximumFragmentSize="6"/>
+        <classRef name="com.mobilebytes.andcustomtitle.R$drawable" eccentricity="2" maximumFragmentSize="6"/>
+        <classRef name="com.mobilebytes.andcustomtitle.R$attr" eccentricity="2" maximumFragmentSize="6"/>
+      </classes>
+      <centerClasses>
+        <classRef name="com.mobilebytes.andcustomtitle.R"/>
+      </centerClasses>
+      <bestFragmenters>
+        <classRef name="com.mobilebytes.andcustomtitle.R"/>
+      </bestFragmenters>
+    </cycle>
+    <cycle name="com.mobilebytes.andcustomtitle.Splash and inner classes" size="2" longestWalk="1" girth="2" radius="1" diameter="1" bestFragmentSize="1">
+      <classes>
+        <classRef name="com.mobilebytes.andcustomtitle.Splash" eccentricity="1" maximumFragmentSize="1"/>
+        <classRef name="com.mobilebytes.andcustomtitle.Splash$1" eccentricity="1" maximumFragmentSize="1"/>
+      </classes>
+      <centerClasses>
+        <classRef name="com.mobilebytes.andcustomtitle.Splash"/>
+        <classRef name="com.mobilebytes.andcustomtitle.Splash$1"/>
+      </centerClasses>
+      <bestFragmenters>
+        <classRef name="com.mobilebytes.andcustomtitle.Splash"/>
+        <classRef name="com.mobilebytes.andcustomtitle.Splash$1"/>
+      </bestFragmenters>
+    </cycle>
+  </cycles>
+  <classes numberOfExternalClasses="14">
+    <class name="com.mobilebytes.andcustomtitle.MainActivity$1" sources="" type="class" innerClass="true" size="973" usedBy="1" usesInternal="1" usesExternal="5" layer="0" cycle="com.mobilebytes.andcustomtitle.MainActivity and inner classes">
+      <classRef name="com.mobilebytes.andcustomtitle.MainActivity" type="usedBy"/>
+      <classRef name="android.view.KeyEvent" type="usesExternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="android.view.View$OnClickListener" type="usesExternal"/>
+      <classRef name="com.mobilebytes.andcustomtitle.MainActivity" type="usesInternal"/>
+      <classRef name="android.view.View" type="usesExternal"/>
+      <classRef name="android.os.Bundle" type="usesExternal"/>
+    </class>
+    <class name="com.mobilebytes.andcustomtitle.Splash" sources="" type="class" innerClass="false" size="881" usedBy="1" usesInternal="1" usesExternal="4" layer="1" cycle="com.mobilebytes.andcustomtitle.Splash and inner classes">
+      <classRef name="com.mobilebytes.andcustomtitle.Splash$1" type="usedBy"/>
+      <classRef name="android.os.Handler" type="usesExternal"/>
+      <classRef name="com.mobilebytes.andcustomtitle.Splash$1" type="usesInternal"/>
+      <classRef name="android.app.Activity" type="usesExternal"/>
+      <classRef name="android.os.Bundle" type="usesExternal"/>
+      <classRef name="java.lang.Runnable" type="usesExternal"/>
+    </class>
+    <class name="com.mobilebytes.andcustomtitle.R$string" sources="" type="class" innerClass="true" size="463" usedBy="1" usesInternal="1" usesExternal="1" layer="0" cycle="com.mobilebytes.andcustomtitle.R and inner classes">
+      <classRef name="com.mobilebytes.andcustomtitle.R" type="usedBy"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="com.mobilebytes.andcustomtitle.R" type="usesInternal"/>
+    </class>
+    <class name="com.mobilebytes.andcustomtitle.R$id" sources="" type="class" innerClass="true" size="538" usedBy="1" usesInternal="1" usesExternal="1" layer="0" cycle="com.mobilebytes.andcustomtitle.R and inner classes">
+      <classRef name="com.mobilebytes.andcustomtitle.R" type="usedBy"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="com.mobilebytes.andcustomtitle.R" type="usesInternal"/>
+    </class>
+    <class name="com.mobilebytes.andcustomtitle.R$attr" sources="" type="class" innerClass="true" size="376" usedBy="1" usesInternal="1" usesExternal="1" layer="0" cycle="com.mobilebytes.andcustomtitle.R and inner classes">
+      <classRef name="com.mobilebytes.andcustomtitle.R" type="usedBy"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="com.mobilebytes.andcustomtitle.R" type="usesInternal"/>
+    </class>
+    <class name="com.mobilebytes.andcustomtitle.R" sources="" type="class" innerClass="false" size="679" usedBy="6" usesInternal="6" usesExternal="1" layer="0" cycle="com.mobilebytes.andcustomtitle.R and inner classes">
+      <classRef name="com.mobilebytes.andcustomtitle.R$attr" type="usedBy"/>
+      <classRef name="com.mobilebytes.andcustomtitle.R$drawable" type="usedBy"/>
+      <classRef name="com.mobilebytes.andcustomtitle.R$id" type="usedBy"/>
+      <classRef name="com.mobilebytes.andcustomtitle.R$layout" type="usedBy"/>
+      <classRef name="com.mobilebytes.andcustomtitle.R$string" type="usedBy"/>
+      <classRef name="com.mobilebytes.andcustomtitle.R$style" type="usedBy"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="com.mobilebytes.andcustomtitle.R$style" type="usesInternal"/>
+      <classRef name="com.mobilebytes.andcustomtitle.R$string" type="usesInternal"/>
+      <classRef name="com.mobilebytes.andcustomtitle.R$layout" type="usesInternal"/>
+      <classRef name="com.mobilebytes.andcustomtitle.R$id" type="usesInternal"/>
+      <classRef name="com.mobilebytes.andcustomtitle.R$drawable" type="usesInternal"/>
+      <classRef name="com.mobilebytes.andcustomtitle.R$attr" type="usesInternal"/>
+    </class>
+    <class name="com.mobilebytes.andcustomtitle.MainActivity" sources="" type="class" innerClass="false" size="1226" usedBy="2" usesInternal="1" usesExternal="7" layer="0" cycle="com.mobilebytes.andcustomtitle.MainActivity and inner classes">
+      <classRef name="com.mobilebytes.andcustomtitle.MainActivity$1" type="usedBy"/>
+      <classRef name="com.mobilebytes.andcustomtitle.Splash$1" type="usedBy"/>
+      <classRef name="android.widget.TextView" type="usesExternal"/>
+      <classRef name="com.mobilebytes.andcustomtitle.MainActivity$1" type="usesInternal"/>
+      <classRef name="android.app.Activity" type="usesExternal"/>
+      <classRef name="android.os.Bundle" type="usesExternal"/>
+      <classRef name="android.view.Window" type="usesExternal"/>
+      <classRef name="android.view.View" type="usesExternal"/>
+      <classRef name="java.lang.CharSequence" type="usesExternal"/>
+      <classRef name="android.view.View$OnClickListener" type="usesExternal"/>
+    </class>
+    <class name="com.mobilebytes.andcustomtitle.Splash$1" sources="" type="class" innerClass="true" size="965" usedBy="1" usesInternal="2" usesExternal="6" layer="1" cycle="com.mobilebytes.andcustomtitle.Splash and inner classes">
+      <classRef name="com.mobilebytes.andcustomtitle.Splash" type="usedBy"/>
+      <classRef name="android.content.Intent" type="usesExternal"/>
+      <classRef name="com.mobilebytes.andcustomtitle.MainActivity" type="usesInternal"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="java.lang.Runnable" type="usesExternal"/>
+      <classRef name="com.mobilebytes.andcustomtitle.Splash" type="usesInternal"/>
+      <classRef name="android.os.Bundle" type="usesExternal"/>
+      <classRef name="android.content.Context" type="usesExternal"/>
+      <classRef name="java.lang.Class" type="usesExternal"/>
+    </class>
+    <class name="com.mobilebytes.andcustomtitle.R$layout" sources="" type="class" innerClass="true" size="495" usedBy="1" usesInternal="1" usesExternal="1" layer="0" cycle="com.mobilebytes.andcustomtitle.R and inner classes">
+      <classRef name="com.mobilebytes.andcustomtitle.R" type="usedBy"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="com.mobilebytes.andcustomtitle.R" type="usesInternal"/>
+    </class>
+    <class name="com.mobilebytes.andcustomtitle.R$drawable" sources="" type="class" innerClass="true" size="836" usedBy="1" usesInternal="1" usesExternal="1" layer="0" cycle="com.mobilebytes.andcustomtitle.R and inner classes">
+      <classRef name="com.mobilebytes.andcustomtitle.R" type="usedBy"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="com.mobilebytes.andcustomtitle.R" type="usesInternal"/>
+    </class>
+    <class name="com.mobilebytes.andcustomtitle.R$style" sources="" type="class" innerClass="true" size="475" usedBy="1" usesInternal="1" usesExternal="1" layer="0" cycle="com.mobilebytes.andcustomtitle.R and inner classes">
+      <classRef name="com.mobilebytes.andcustomtitle.R" type="usedBy"/>
+      <classRef name="java.lang.Object" type="usesExternal"/>
+      <classRef name="com.mobilebytes.andcustomtitle.R" type="usesInternal"/>
+    </class>
+  </classes>
+  <packageCycles>
+  </packageCycles>
+  <packages>
+    <package name="com.mobilebytes.andcustomtitle" sources=""  size="11" usedBy="1" usesInternal="1" usesExternal="6" layer="0" cycle="">
+      <packageRef name="com.mobilebytes.andcustomtitle" type="usedBy"/>
+      <packageRef name="android.view" type="usesExternal"/>
+      <packageRef name="java.lang" type="usesExternal"/>
+      <packageRef name="com.mobilebytes.andcustomtitle" type="usesInternal"/>
+      <packageRef name="android.os" type="usesExternal"/>
+      <packageRef name="android.app" type="usesExternal"/>
+      <packageRef name="android.widget" type="usesExternal"/>
+      <packageRef name="android.content" type="usesExternal"/>
+    </package>
+  </packages>
+</classycle>

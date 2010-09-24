@@ -1,0 +1,49 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<title>PMD Results for AndCooperANT</title>
+<link rel="stylesheet" type="text/css" href="andcooper.reports.css">
+</head>
+<body>
+<h1>
+<img src="images/companylogo.png"></h1>
+<h1>
+<img src="images/pmd_logo_small.jpg">PMD Static Analysis of AndCooperANT source code</h1>
+<p align="right">Run with <a href="http://pmd.sourceforge.net">PMD 4.2.5</a> on 2010-09-24T09:44:09.317</p>
+<hr size="2">
+<table class="summary">
+<tr>
+<th>Rulesets Used</th><th>Files</th><th>Items Found</th><th>Priority 1</th><th>Priority 2</th><th>Priority 3</th><th>Priority 4</th><th>Priority 5</th>
+</tr>
+<tr>
+<td>androidrules</td><td>0</td><td>0</td><td>
+<div class="p1">0</div>
+</td><td>
+<div class="p2">0</div>
+</td><td>
+<div class="p3">0</div>
+</td><td>
+<div class="p4">0</div>
+</td><td>
+<div class="p5">0</div>
+</td>
+</tr>
+</table>
+<hr size="2">
+
+<h3>Explanations</h3>
+<p>Thus, far the AndCooper ruleset uses the following checks:</p>
+<p>AndCooper--Excludes the R.java autogenered files and checks for these violations:</p>
+<p>*hard wiring /sdcard locations rather than Environment.getExternalStorageDirectory()</p>
+<p>*PMD-Android ruleset--Checks for these violations;CallSuperFirst: Super should be called at the start of the method, 
+    CallSuperLast: Super should be called at the end of the method, 
+    ProtectLogD: Log.d calls should be protected by checking Config.LOGD first, 
+    ProtectLogV: Log.v calls should be protected by checking Config.LOGV first</p>
+<p>*PMD-Clone ruleset</p>
+<p>*PMD-Finalizers</p>
+<p>*PMD-Imports</p>
+<p>*PMD-Logging-java</p>
+<p>*PMD-Naming</p>
+</body>
+</html>

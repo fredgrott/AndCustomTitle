@@ -1,0 +1,86 @@
+body {
+  font-size: 80%;
+  font-family: verdana, arial, helvetica, sans-serif;
+}
+ 
+th, td {
+  text-align: left;
+  padding: 5px;
+  
+} 
+
+td a img { 
+   border-width:0; 
+   margin-left:5pt; 
+   vertical-align:middle;
+}
+
+table tr th {
+  font-weight: bold;
+}
+
+table.details tr th {
+  background-color: #a6caf0;
+}
+
+table.details tr td {
+  background-color: #eeeee0;
+}
+
+table.summary tr th {
+  background-color: #d6caf0;
+}
+
+table.summary tr td {
+  background-color: #eeeee0;
+}
+
+p {
+  line-height: 1.5em;
+  margin: 0.5em 2em 1.0em 2em;
+}
+
+h1 {
+  margin: 0px 0px 5px;
+  font: 165%;
+}
+
+h2 {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  font: bold 125%;
+}
+
+h3 {
+  margin-bottom: 0.5em;
+  font: bold 115%;
+}
+
+h4 {
+  margin-bottom: 0.5em;
+  font: bold 100%;
+}
+
+h5 {
+  margin-bottom: 0.5em;
+  font: bold 100%;
+}
+
+h6 {
+  margin-bottom: 0.5em;
+  font: bold 100%;
+}
+
+hr {
+  height: 1px;
+}
+
+.Error {
+        font-weight:bold; color:red;
+ }
+ .Failure {
+        font-weight:bold; color:purple;
+ }
+.Properties {
+        text-align:right;
+ }
