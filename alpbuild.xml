@@ -293,9 +293,13 @@
     <property name="rulesets" value="androidrules"/>
     <property name="today" value="${DSTAMP}"/>
 
-    <path id="javadoc.source">
-                <pathelement path="${source.absolute.dir}"/>
-    </path>
+	<!-- In Android for Javadocs to be generated right we
+	             have to include the gen folder to pick up
+	             the R.java for the imports of the R class.-->
+	        <path id="javadoc.source">
+	                    <pathelement path="${source.absolute.dir}"/>
+	                    <pathelement path="${gen.absolute.dir}"/>
+	        </path>
 
     <!-- When I add javadoc I am assuming that IDE has put
          its incremental build result at bin/
