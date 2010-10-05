@@ -1,4 +1,5 @@
 ![AndCustomTitle](http://github.com/shareme/andcustomtitle/raw/master/screenshots/andcustomtitleicon.png)
+
 # Project Name
 
 AndCustomTitle uses themes and extended Window features of Android to customize
@@ -48,6 +49,10 @@ Slides on the techniques used can be downloaded at:
 [Android UI Patterns-Custom Title](http://github.com/downloads/shareme/AndCustomTitle/presentation.html)
 
 Once downloaded, open it in your browser.
+
+# Video
+
+[andCustomtitle video](http://www.youtube.com/watch?v=e-iQIkC-u-g)
 
 
 # Credits
